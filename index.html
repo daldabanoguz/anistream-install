@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>AniStream</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; background: #000; color: #fff;
+         font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+         display: flex; align-items: center; justify-content: center;
+         padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom)); box-sizing: border-box; }
+  main { width: 100%; max-width: 420px; text-align: center; }
+  img { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 8px 30px rgba(255, 45, 85, .35); }
+  h1 { margin: 18px 0 2px; font-size: 30px; }
+  .version { color: #8e8e93; font-size: 14px; margin-bottom: 26px; }
+  .install { display: block; padding: 16px; border-radius: 14px; background: #ff2d55; color: #fff;
+             font-weight: 700; font-size: 19px; text-decoration: none; }
+  .install:active { opacity: .8; }
+  ol { text-align: left; color: #c7c7cc; font-size: 15px; padding-left: 22px; margin: 26px 0 0; }
+  li { margin-bottom: 8px; }
+  .en { color: #8e8e93; font-size: 13px; margin-top: 26px; }
+  .warn { display: none; background: #2c2c2e; border-radius: 12px; padding: 12px; font-size: 15px; margin-bottom: 18px; }
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-512.png" alt="">
+  <h1>AniStream</h1>
+  <div class="version">Sürüm 1.0 (26) · 2026-10-21</div>
+  <div class="warn" id="safari">Bu sayfayı iPhone'da <b>Safari</b> ile açın.<br>Open this page in <b>Safari</b> on your iPhone.</div>
+  <a class="install" href="itms-services://?action=download-manifest&amp;url=https://daldabanoguz.github.io/anistream-install/manifest.plist">Yükle</a>
+  <ol>
+    <li><b>Yükle</b>'ye dokunun, sonra çıkan pencerede <b>Yükle</b>'ye tekrar dokunun.</li>
+    <li>Ana ekrana dönün: uygulama birkaç saniye içinde iner.</li>
+    <li>Güncelleme olunca aynı sayfadan tekrar yükleyin: izleme geçmişiniz ve indirmeleriniz kalır.</li>
+  </ol>
+  <p class="en">Tap <b>Install</b> (Yükle), confirm, and go to the Home Screen. Only works on iPhones registered for this build.</p>
+</main>
+<script>
+  // Installs only work from Safari on an iPhone.
+  var ua = navigator.userAgent;
+  if (!/iPhone|iPad/.test(ua) || /CriOS|FxiOS|EdgiOS|Instagram|FBAN|WhatsApp/.test(ua)) {
+    document.getElementById('safari').style.display = 'block';
+  }
+</script>
+</body>
+</html>
